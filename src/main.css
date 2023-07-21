@@ -1,0 +1,256 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font: inherit;
+}
+
+:root {
+  --bg-color: #131723;
+  --clr-primary: #5fead1;
+  --clr-grey: #4a4d55;
+  --clr-darkgrey: #1f2633;
+  --clr-white: #fbfbfb;
+  --clr-black: #1f2633;
+
+  background-color: royalblue;
+  color: white;
+}
+
+body {
+  touch-action: pan-x pan-y;
+  height: 100dvh;
+  /* width: 100vw; */
+  overflow: hidden;
+
+  display: flex;
+}
+
+main {
+  margin: auto;
+  height: 720px;
+  width: 320px;
+  background-color: var(--bg-color);
+
+  border-radius: 1rem;
+  overflow: hidden;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------- time area ------------------------------- */
+.time-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 6rem;
+  position: relative;
+}
+
+.time-area::before {
+  content: '';
+  position: absolute;
+  height: 80%;
+  aspect-ratio: 1;
+  border: 4px solid var(--clr-primary);
+  box-shadow: rgb(95, 234, 209, 0.2) 4px 7px 29px 0px;
+  border-radius: 50%;
+}
+
+.time-area__header {
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+}
+
+.time-area__countdown-time {
+  font-size: 1.2rem;
+}
+
+/* ------------------------------- time area ------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------- add-timer ------------------------------- */
+.add-timer {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.add-timer input {
+  padding: 0.2rem;
+}
+
+.add-timer div {
+  display: flex;
+  gap: 1rem;
+}
+
+.add-timer div label {
+  display: inline-block;
+  display: flex;
+}
+
+.add-timer div input {
+  width: 100%;
+  padding: 0 5px;
+}
+
+/* -------------------------------- add-timer ------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* ------------------------------- timers area ------------------------------ */
+.timers-area {
+  flex: 1;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+
+.timers-area__header {
+  background-color: var(--clr-darkgrey);
+  padding: /* 0.2rem */ 1rem;
+  margin: 1rem 0;
+}
+
+.timers {
+  list-style-type: none;
+  padding: 0 0.2rem;
+  padding-bottom: 1rem;
+  height: 90%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  overflow-y: scroll;
+}
+
+/* -------------------------------------------------------------------------- */
+/* ---------------------------------- timer --------------------------------- */
+
+.timer {
+  border-left: 5px solid var(--clr-primary);
+  background-color: hsla(219, 24%, 16%, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* --------------------------- btn-status-control --------------------------- */
+/* -------------------------------------------------------------------------- */
+.timer__btn-status-control {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.timer__btn-status-control:active {
+  scale: 0.9;
+}
+/* -------------------------------------------------------------------------- */
+/* --------------------------- btn-status-control --------------------------- */
+/* -------------------------------------------------------------------------- */
+
+.timer__label {
+  margin-left: auto;
+  opacity: 0.4;
+}
+
+/* -------------------------------------------------------------------------- */
+/* ----------------------------- status checkbox ---------------------------- */
+/* -------------------------------------------------------------------------- */
+.timer__status {
+  cursor: pointer;
+  margin-left: auto;
+
+  width: 2.25rem;
+  height: 1.25rem;
+  scale: 1.1;
+
+  border-radius: 1em;
+
+  appearance: none;
+  background-color: var(--clr-black);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+
+  position: relative;
+}
+
+.timer__status:checked {
+  background-color: var(--clr-primary);
+}
+
+.timer__status::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background: var(--clr-white);
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+}
+
+.timer__status:checked::before {
+  left: 1.25rem;
+}
+/* -------------------------------------------------------------------------- */
+/* ----------------------------- status checkbox ---------------------------- */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/* ---------------------------- timer btn delete ---------------------------- */
+/* -------------------------------------------------------------------------- */
+.timer__btn-delete {
+  cursor: pointer;
+  font-size: 1rem;
+  height: 2rem;
+  width: 2rem;
+
+  background-color: red;
+  border: none;
+  border-radius: 1rem;
+  color: currentColor;
+}
+
+.timer__btn-delete:active {
+  scale: 0.95;
+}
+/* -------------------------------------------------------------------------- */
+/* ---------------------------- timer btn delete ---------------------------- */
+/* -------------------------------------------------------------------------- */
+
+/* ---------------------------------- timer --------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  :root {
+    background-color: var(--bg-color);
+  }
+
+  main {
+    height: 100%;
+    width: 100%;
+  }
+}

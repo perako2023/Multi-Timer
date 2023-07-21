@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>Multi Timer</title>
+    <link rel="stylesheet" href="src/main.css" />
+    <script type="module" src="src/main.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="time-area">
+        <h2 id="countdown-header" class="time-area__header">NEXT TIMER</h2>
+        <h4 id="countdown" class="time-area__countdown-time">1d 24h 60m 60s</h4>
+      </section>
+
+      <form id="add-timer" class="add-timer">
+        <div>
+          <label
+            >Hours: <input required name="hours" type="tel" value="0"
+          /></label>
+
+          <label
+            >Minutes: <input required name="minutes" type="tel" value="0"
+          /></label>
+
+          <label
+            >Seconds: <input required name="seconds" type="tel" value="0"
+          /></label>
+        </div>
+
+        <input
+          value="timer"
+          type="text"
+          name="label"
+          placeholder="label: (optional)"
+        />
+        <input type="submit" value="Add" />
+      </form>
+
+      <section class="timers-area">
+        <h2 class="timers-area__header">TIMERS</h2>
+        <ul id="timers" class="timers">
+          <!-- <li class="timer">
+            <div class="timer__time">10 : 00</div>
+            <button class="timer__btn-status-control">🔃</button>
+            <div class="timer__label">Timer</div>
+            <input class="timer__status" type="checkbox" />
+            <button class="timer__btn-delete">&times;</button>
+          </li> -->
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
